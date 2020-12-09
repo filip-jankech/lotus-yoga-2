@@ -6,12 +6,12 @@ import { AnchorLink } from "gatsby-plugin-anchor-links"
 import SEO from '../components/seo'
 import Layout from "../components/layout"
 
-const NotFoundPage = () => (
+const MessageSent = () => (
   <Layout>
-    <SEO title="Stránka nenalezena" />
+    <SEO title="Zpráva odeslaná" />
     <Container className="not-found">
-      <h1>Stránka nenalezena</h1>
-      <p>Stránka, na kterou se pokoušíte dostat, neexistuje.</p>
+      <h1>Zpráva odeslána</h1>
+      <p>Děkujeme za Vaši zprávu, ozveme se Vám co možná nejdříve.</p>
       <Row>
         <AnchorLink to="/#header" title="Zpět na domovskou stránku" stripHash />
       </Row>
@@ -19,4 +19,4 @@ const NotFoundPage = () => (
   </Layout>
 )
 
-export default NotFoundPage
+export default MessageSent

@@ -1,16 +1,12 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
 
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+import { Container } from 'react-bootstrap'
 
 import Header from "./header"
-import "./layout.css"
+import "./layout.scss"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -19,6 +15,14 @@ const Layout = ({ children }) => {
         siteMetadata {
           title
         }
+      },
+      optimalLogo: file(relativePath: {eq: "h-optimal_logo.png"}) {
+        id
+        childImageSharp {
+          fluid(maxWidth: 18) {
+            ...GatsbyImageSharpFluid
+          }
+        }
       }
     }
   `)
@@ -26,20 +30,23 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <div className="site-content">
         <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <footer>
+          <Container className="footer__container">
+            <div className="footer__disclaimer">
+              <a href="https://www.h-optimal.cz/" target="_blank" rel="noreferrer noopener" className="footer__h-optimal">
+                <Img fluid={data.optimalLogo.childImageSharp.fluid} className="h-optimal__logo" alt="h-optimal logo" />
+                <span> h-optimal</span>
+              </a>
+              <span> | {new Date().getFullYear()} © všechna práva vyhrazena</span>
+            </div>
+            <div className="footer__links">
+              <a href="https://www.lotuscentrum.cz/" target="_blank" rel="noreferrer noopener">www.lotuscentrum.cz</a> |
+              <a href="https://www.kratomlove.cz/" target="_blank" rel="noreferrer noopener"> www.kratomlove.cz</a> |
+              <a href="http://www.lotusyoga.cz/" target="_blank" rel="noreferrer noopener"> www.lotusyoga.cz</a>
+            </div>
+          </Container>
         </footer>
       </div>
     </>
