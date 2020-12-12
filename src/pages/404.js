@@ -8,7 +8,7 @@ import Layout from "../components/layout"
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="Stránka nenalezena" />
+    <SEO title="Stránka nenalezena" description="Yoga je cesta dovnitř k sobě samému, cesta za naši mysl, až k pochopení toho, kdo je to ten pozorovatel." />
     <Container className="not-found">
       <h1>Stránka nenalezena</h1>
       <p>Stránka, na kterou se pokoušíte dostat, neexistuje.</p>
