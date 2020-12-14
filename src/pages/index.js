@@ -258,16 +258,23 @@ const IndexPage = () => {
                         <Row>
                           <Col>
                             <input className="form__text-input" ref={register({ required: true })} name="name" type="text" placeholder="Vaše jméno" />
-                            {errors.name && <div className="form__error">Zadejte své jméno</div>}
+                              {errors.name && <div className="form__error">Zadejte své jméno</div>}
                             <input className="form__text-input" ref={register({ required: true, pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i } })} name="email" placeholder="Váš email" />
-                            {errors.email && errors.email.type === "required" && (
-                              <div className="form__error">Zadejte svou emailovou adresu</div>
-                            )}
-                            {errors.email && errors.email.type === "pattern" && (
-                              <div className="form__error">Zadaná adresa není platná</div>
-                            )}
-                            <textarea className="form__text-input" ref={register({ required: true })} name="message" rows="8" placeholder="Vaše zpráva" />
-                            {errors.message && <div className="form__error">Napište nám Vaše přání</div>}
+                              {errors.email && errors.email.type === "required" && (
+                                <div className="form__error">Zadejte svou emailovou adresu</div>
+                              )}
+                              {errors.email && errors.email.type === "pattern" && (
+                                <div className="form__error">Zadaná adresa není platná</div>
+                              )}
+                            <input className="form__text-input" ref={register({ required: true, minLength: 9 })} name="telephone" type="tel" placeholder="Vaše telefónní číslo" />
+                              {errors.telephone && errors.telephone.type === "required" && (
+                                <div className="form__error">Zadejte své telefónní číslo</div>
+                              )}
+                              {errors.telephone && errors.telephone.type === "minLength" && (
+                                <div className="form__error">Číslo je příliš krátké</div>
+                              )}
+                            <textarea className="form__text-input" ref={register({ required: true })} name="message" rows="7" placeholder="Vaše zpráva" />
+                              {errors.message && <div className="form__error">Napište nám Vaše přání</div>}
                           </Col>
                         </Row>
                         <Row className="form__submit">
@@ -315,16 +322,23 @@ const IndexPage = () => {
                         <Row>
                           <Col>
                             <input className="form__text-input" ref={register2({ required: true })} name="name" type="text" placeholder="Vaše jméno" />
-                            {errors2.name && <div className="form__error">Zadejte své jméno</div>}
+                              {errors2.name && <div className="form__error">Zadejte své jméno</div>}
                             <input className="form__text-input" ref={register2({ required: true, pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i } })} name="email" placeholder="Váš email" />
-                            {errors2.email && errors2.email.type === "required" && (
-                              <div className="form__error">Zadejte svou emailovou adresu</div>
-                            )}
-                            {errors2.email && errors2.email.type === "pattern" && (
-                              <div className="form__error">Zadaná adresa není platná</div>
-                            )}
+                              {errors2.email && errors2.email.type === "required" && (
+                                <div className="form__error">Zadejte svou emailovou adresu</div>
+                              )}
+                              {errors2.email && errors2.email.type === "pattern" && (
+                                <div className="form__error">Zadaná adresa není platná</div>
+                              )}
+                            <input className="form__text-input" ref={register2({ required: true, minLength: 9 })} name="telephone" type="tel" placeholder="Vaše telefónní číslo" />
+                              {errors2.telephone && errors2.telephone.type === "required" && (
+                                <div className="form__error">Zadejte své telefónní číslo</div>
+                              )}
+                              {errors2.telephone && errors2.telephone.type === "minLength" && (
+                                <div className="form__error">Číslo je příliš krátké</div>
+                              )}
                             <textarea className="form__text-input" ref={register2({ required: true })} name="message" rows="8" placeholder="Vaše zpráva" />
-                            {errors2.message && <div className="form__error">Napište nám Vaše přání</div>}
+                              {errors2.message && <div className="form__error">Napište nám Vaše přání</div>}
                           </Col>
                         </Row>
                         <Row className="form__submit">
