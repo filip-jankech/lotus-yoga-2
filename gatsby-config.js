@@ -22,14 +22,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: 'gatsby-plugin-htaccess',
-      options: {
-        https: true,
-        www: false,
-        host: 'lotusyoga.cz',
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
