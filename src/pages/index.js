@@ -86,7 +86,7 @@ const IndexPage = () => {
   return (
     <animated.div style={fade}>
       <Layout>
-        <SEO title="Domov" description="Yoga je cesta dovnitř k sobě samému, cesta za naši mysl, až k pochopení toho, kdo je to ten pozorovatel." />
+        <SEO title="Cesta k sobě samému" description="Yoga je cesta dovnitř k sobě samému, cesta za naši mysl, až k pochopení toho, kdo je to ten pozorovatel." />
         <Container>
           <div className="section__intro" id="section__about">
             <h1>Lotus Yoga</h1>
